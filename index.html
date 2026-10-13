@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Александр Телегин — B2B-продажи и маркетинг · визитка</title>
+<meta name="description" content="Визитка Александра Телегина: B2B-продажи и маркетинг, свой проект в сфере обработки дерева и металла.">
+<style>
+:root{
+  --bg:#f3f5f8; --ink:#1f2933; --muted:#5b6776; --card:#ffffff; --line:#dde3ea;
+  --accent:#3d6a94; --dark:#26323f;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:15px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;font-weight:700}
+h2{font-size:clamp(1.7rem,4vw,2.2rem);margin-bottom:.5em}
+h2::after{content:"";display:block;width:56px;height:3px;background:var(--accent);margin-top:.5em}
+h3{font-size:1.15rem;margin-bottom:.4em}
+strong{font-weight:650}
+section{padding:68px 0}
+p{margin-bottom:1em}
+
+/* hero */
+.hero{position:relative;isolation:isolate;color:#fff;padding:44px 0 40px;min-height:0;display:flex;align-items:flex-end;
+  background:radial-gradient(900px 420px at 85% 0%,rgba(61,106,148,.5),transparent 70%),var(--dark)}
+.hero .wrap{width:100%}
+figure{margin:0}
+figure img{display:block;width:100%;height:100%;object-fit:cover;border-radius:12px}
+figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
+.wide{margin:28px 0}
+.wide img{height:320px}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 36px}
+.photos img{height:auto;aspect-ratio:1/1}
+.home{margin-top:34px}
+.home-row{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+.home ul{list-style:none}
+.home li{padding:10px 0;border-top:1px solid var(--line);font-size:.98rem}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pair img{height:240px}
+.hero-row{display:flex;align-items:center;justify-content:space-between;gap:32px}
+.hero-text{min-width:0}
+.me{flex:none;width:230px;height:230px;border-radius:50%;object-fit:cover;object-position:50% 50%;border:5px solid rgba(255,255,255,.9);box-shadow:0 8px 30px rgba(0,0,0,.4)}
+
+.about-photo{margin-bottom:22px}
+.about-photo img{height:380px;object-position:50% 40%}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:#9cc2e5;margin-bottom:14px}
+.hero h1{font-size:clamp(2rem,7vw,3.6rem);margin-bottom:.3em}
+.hero p{max-width:34em;font-size:clamp(1rem,2.2vw,1.1rem);color:#dbe4ee;margin-bottom:0}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.badges span{border:1px solid rgba(255,255,255,.35);border-radius:99px;padding:5px 14px;font-size:.9rem}
+
+/* about */
+.cols{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;align-items:start}
+.timeline{list-style:none}
+.timeline li{padding:14px 0 14px 28px;border-top:1px solid var(--line);position:relative}
+.timeline li::before{content:"";position:absolute;left:4px;top:24px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+
+/* work */
+.work{background:#e8edf3}
+.quote{font-family:var(--serif);font-style:italic;font-size:1.2rem;border-left:3px solid var(--accent);
+  padding:4px 0 4px 18px;margin:28px 0}
+.quote cite{display:block;font-style:normal;font-size:.9rem;color:var(--muted);margin-top:6px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 16px}
+.card p{color:var(--muted);font-size:.96rem;margin:0}
+.resources{padding:22px 26px;border-radius:12px;background:var(--dark);color:#dbe4ee}
+.resources h3{color:#9cc2e5}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px 36px}
+.facts h3{color:var(--accent)}
+.facts ul{list-style:none}
+.facts li{padding:10px 0;border-top:1px solid var(--line);font-size:.98rem}
+.how{margin-top:22px;padding:24px 28px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px}
+
+/* finale */
+.finale{position:relative;isolation:isolate;background:var(--dark) url("images/IMG_20210728_191007_594.jpg") 50% 40%/cover no-repeat;color:#fff;text-align:center;padding:110px 0}
+.finale::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,16,14,.7),rgba(18,16,14,.85))}
+.finale blockquote{font-family:var(--serif);font-size:clamp(1.4rem,4.5vw,2.4rem);line-height:1.3;max-width:22em;margin:0 auto 16px}
+.finale cite{font-style:normal;color:#9cc2e5;letter-spacing:.05em}
+
+footer{padding:22px 0 36px;font-size:.8rem;color:var(--muted)}
+
+@media (max-width:640px){
+  section{padding:48px 0}
+  .hero{padding:44px 0 36px}
+  .cols{grid-template-columns:1fr;gap:12px}
+  .photos{gap:8px}
+  .home-row{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .hero-row{flex-direction:column-reverse;align-items:flex-start;gap:18px}
+  .me{width:150px;height:150px}
+  .about-photo img{height:340px}
+}
+
+/* печать / PDF: раздел «Факты обо мне» целиком на одной странице */
+@page{size:A4;margin:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+@media print{
+  footer{display:none}
+  section{padding:34px 0}
+  .hero{padding:32px 0 30px}
+  .work,#facts,.how,.card,figure{break-inside:avoid}
+  #facts{break-before:page;padding:24px 0 16px}
+  .photos{margin-bottom:22px}
+  .photos img{max-height:190px}
+  .pair img{height:170px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-row">
+    <div class="hero-text">
+    <div class="eyebrow">Визитка</div>
+    <h1>Александр Телегин</h1>
+    <p>Занимаюсь продажами и маркетингом в сегменте B2B. Сейчас начинаю свой небольшой бизнес в сфере обработки дерева и металла.</p>
+    <div class="badges"><span>Минск, Беларусь</span><span>B2B-продажи и маркетинг</span><span>Начинающий предприниматель</span></div>
+    </div>
+    <img class="me" src="images/portrait.jpg" alt="Александр Телегин">
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap cols">
+    <div>
+      <h2>Обо мне</h2>
+      <p>Позвольте представиться: меня зовут <strong>Александр Телегин</strong>. Родился и живу в Минске. Занимаюсь развитием своего дела, ранее работал в промышленных компаниях в сфере маркетинга и продаж.</p>
+      <p>Умею работать как с цифрами, так и с людьми. Привык разбираться в цифрах и рынке: делал маркетинговые исследования, анализировал конкурентов, считал цены. Умею работать в команде и руководить ею. С новыми людьми обычно быстро нахожу общий язык.</p>
+      <p>Я <strong>всегда стремлюсь узнавать что-то новое</strong>, в том числе в областях, далёких от моей основной. Поэтому и после университета продолжал учиться: проходил курсы по маркетингу и бизнес-анализу, а теперь осваиваю новую для себя сферу нейросетей.</p>
+    </div>
+    <div>
+      <h3>Коротко о пути</h3>
+      <ul class="timeline">
+        <li><strong>2010–2015 · Белорусский государственный университет.</strong> Факультет международных отношений, специализация «Мировая экономика», степень бакалавра, с изучением английского и испанского языков.</li>
+        <li><strong>Опыт работы.</strong> Работал на различных должностях преимущественно в B2B сфере в промышленности. Занимался маркетингом и продажами, более 30 зарубежных командировок.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="work">
+  <div class="wrap">
+    <h2>Чем занимаюсь</h2>
+    <p>Сейчас я начинаю свой небольшой бизнес в сфере <strong>обработки дерева и металла</strong>. Это новое для меня дело, но с понятной базой: много лет я проработал в промышленных B2B-компаниях.</p>
+    <p>Долго продавал и продвигал чужую продукцию, и захотелось сделать что-то своё. Сейчас я на старте: прорабатываю идею, считаю экономику и ищу первых клиентов.</p>
+    <p>Хочу делать хороший продукт и оставаться честным партнёром.</p>
+    <div class="cards">
+      <div class="card"><h3>Идея и продукт</h3><p>Решаю, что именно делать и для кого, чтобы это было нужно людям.</p></div>
+      <div class="card"><h3>Рынок и конкуренты</h3><p>Изучаю рынок так же, как делал это на работе.</p></div>
+      <div class="card"><h3>Цены</h3><p>Считаю себестоимость и выбираю цену, чтобы бизнес приносил прибыль.</p></div>
+      <div class="card"><h3>Первые клиенты</h3><p>Ищу, веду переговоры, показываю, что предлагаю.</p></div>
+    </div>
+    <div class="resources">
+      <h3>Что у меня есть</h3>
+      Опыт B2B-продаж и маркетинга, умение договариваться, аналитический подход, опыт руководства командой и компанией, английский и испанский. Своё дело с нуля — это марафон, но к старту я подготовился.
+    </div>
+    <div class="how">
+      <h3>Как со мной работать</h3>
+      Я <strong>держу данное слово</strong>: если пообещал, значит, сделаю. Ценю надёжность и пунктуальность и в себе, и в партнёрах, поэтому прихожу вовремя и сроки не срываю. Люблю ясные договорённости и открытый разговор.
+    </div>
+  </div>
+</section>
+
+<section id="facts">
+  <div class="wrap">
+    <h2>Факты обо мне</h2>
+    <p>Небольшое досье. Работа работой, но жизнь у меня не ограничивается переговорами и таблицами.</p>
+    <div class="photos">
+      <figure><img src="images/IMG_20231002_150627_588.JPG" alt="Старт забега, Александр с поднятым кулаком" style="object-position:50% 58%" loading="lazy"></figure>
+      <figure><img src="images/IMG_20230709_192934_011.JPG" alt="Александр на препятствии в гонке OCR" style="object-position:50% 55%" loading="lazy"></figure>
+      <figure><img src="images/IMG_20210728_191007_594.jpg" alt="Александр с велосипедом на берегу озера" style="object-position:50% 62%" loading="lazy"></figure>
+    </div>
+    <div class="facts">
+      <div>
+        <h3>Спорт</h3>
+        <ul>
+          <li>Любительский спорт: <strong>бег</strong>, <strong>велоспорт</strong>, <strong>OCR</strong> (гонки с препятствиями) и <strong>тренажёрный зал</strong>.</li>
+          <li>Спорт держит в форме и в хорошем настроении, а после тренировки думается лучше.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Путешествия и друзья</h3>
+        <ul>
+          <li>Люблю <strong>путешествовать</strong>: новые места, города и страны. Языки в поездках пригождаются.</li>
+          <li>Люблю <strong>проводить время с друзьями</strong>. Хороший разговор за столом ценю не меньше, чем удачную сделку.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="home">
+      <h3>Дома</h3>
+      <div class="home-row">
+        <div class="pair">
+          <figure><img src="images/2.jpg" alt="Кошка спит на диване" style="object-position:58% 58%" loading="lazy"><figcaption>Хозяйка квартиры на дежурстве.</figcaption></figure>
+          <figure><img src="images/photo_2026-08-05_09-25-11.jpg" alt="Кошка лежит рядом с медалями" style="object-position:30% 40%" loading="lazy"><figcaption>Охраняет медали</figcaption></figure>
+        </div>
+        <ul>
+          <li>У меня живёт <strong>кошка</strong>. Она, конечно, главная в доме, и все это понимают.</li>
+          <li>Раньше она <strong>жила на улице</strong>, а теперь у неё есть <strong>своя квартира в столице</strong>. Карьера, по любым меркам, удалась.</li>
+        </ul>
+      </div>
+    </div>  </div>
+</section>
+
+<footer><div class="wrap">
+  Александр Телегин · Минск, Беларусь
+</div></footer>
+
+</body>
+</html>
