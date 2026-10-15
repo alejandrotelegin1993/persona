@@ -8,7 +8,7 @@
 <style>
 :root{
   --bg:#f3f5f8; --ink:#1f2933; --muted:#5b6776; --card:#ffffff; --line:#dde3ea;
-  --accent:#3d6a94; --dark:#26323f;
+  --accent:#3d6a94; --dark:#26323f; --work-bg:#e8edf3;
   --serif:Georgia,"Times New Roman",serif;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
 }
@@ -60,7 +60,7 @@ figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
 .timeline li::before{content:"";position:absolute;left:4px;top:24px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
 
 /* work */
-.work{background:#e8edf3}
+.work{background:var(--work-bg)}
 .quote{font-family:var(--serif);font-style:italic;font-size:1.2rem;border-left:3px solid var(--accent);
   padding:4px 0 4px 18px;margin:28px 0}
 .quote cite{display:block;font-style:normal;font-size:.9rem;color:var(--muted);margin-top:6px}
@@ -83,7 +83,30 @@ figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
 .finale blockquote{font-family:var(--serif);font-size:clamp(1.4rem,4.5vw,2.4rem);line-height:1.3;max-width:22em;margin:0 auto 16px}
 .finale cite{font-style:normal;color:#9cc2e5;letter-spacing:.05em}
 
+/* contacts */
+.contacts-list{list-style:none;padding:0;margin-top:18px;display:grid;gap:12px}
+.contacts-list li{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.contacts-list .label{min-width:92px;color:var(--muted)}
+.contacts-list a{color:var(--accent);text-decoration:none}
+.contacts-list a:hover{text-decoration:underline}
+.messengers{display:inline-flex;gap:8px}
+.messengers a{display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;background:var(--card)}
+.messengers a:hover{border-color:var(--accent);text-decoration:none}
+.messengers svg{width:18px;height:18px;fill:var(--accent)}
+
 footer{padding:22px 0 36px;font-size:.8rem;color:var(--muted)}
+
+/* тёмная тема: фото приглушены, при наведении становятся светлыми */
+[data-theme="dark"]{
+  --bg:#12171d; --ink:#e3e8ee; --muted:#9aa6b4; --card:#1b232c; --line:#2c3743;
+  --accent:#7fb0dc; --work-bg:#171e26;
+  color-scheme:dark;
+}
+[data-theme="dark"] figure img,[data-theme="dark"] .me{filter:brightness(.5);transition:filter .35s ease}
+[data-theme="dark"] figure img:hover,[data-theme="dark"] .me:hover{filter:brightness(1)}
+.theme-toggle{position:fixed;top:14px;right:14px;z-index:10;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.35);
+  background:rgba(38,50,63,.75);color:#fff;font-size:1.1rem;line-height:1;cursor:pointer;backdrop-filter:blur(4px)}
+.theme-toggle:hover{background:rgba(38,50,63,.95)}
 
 @media (max-width:640px){
   section{padding:48px 0}
@@ -101,7 +124,8 @@ footer{padding:22px 0 36px;font-size:.8rem;color:var(--muted)}
 @page{size:A4;margin:0}
 html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 @media print{
-  footer{display:none}
+  footer,.theme-toggle{display:none}
+  figure img,.me{filter:none !important}
   section{padding:34px 0}
   .hero{padding:32px 0 30px}
   .work,#facts,.how,.card,figure{break-inside:avoid}
@@ -112,7 +136,23 @@ html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>
+<script>
+(function(){
+  var t;
+  try{t=localStorage.getItem('theme')}catch(e){}
+  if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+  document.documentElement.dataset.theme=t;
+})();
+</script>
 <body>
+<button class="theme-toggle" type="button" aria-label="Переключить тему" title="Светлая / тёмная тема">◐</button>
+<script>
+document.querySelector('.theme-toggle').addEventListener('click',function(){
+  var r=document.documentElement,t=r.dataset.theme==='dark'?'light':'dark';
+  r.dataset.theme=t;
+  try{localStorage.setItem('theme',t)}catch(e){}
+});
+</script>
 
 <header class="hero">
   <div class="wrap hero-row">
@@ -205,6 +245,25 @@ html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
         </ul>
       </div>
     </div>  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <h2>Контакты</h2>
+    <p>Открыт к сотрудничеству и новым проектам. Напишите или позвоните, отвечу в рабочее время.</p>
+    <ul class="contacts-list">
+      <li><span class="label">Почта</span><a href="mailto:alejandrotelegin1993@gmail.com">alejandrotelegin1993@gmail.com</a></li>
+      <li>
+        <span class="label">Телефон</span>
+        <a href="tel:+375447143845">+375 44 714-38-45</a>
+        <span class="messengers">
+          <a href="viber://chat?number=%2B375447143845" aria-label="Viber" title="Viber"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.9 2 3.5 3.3 3.5 9.5c0 3.3.9 5.4 2.6 6.6V21l3.3-2.9c.9.2 1.8.3 2.6.3 5.1 0 8.5-1.3 8.5-7.9S17.100 2 12 2zm3.800 14.200c-.4.4-1 .6-1.500.4-2.900-.9-5.200-3.100-6.200-6-.2-.5 0-1.100.4-1.500l.7-.7c.2-.2.500-.2.700 0l1.200 1.500c.1.200.1.400 0 .6l-.4.600c.6 1.200 1.500 2 2.700 2.600l.6-.4c.2-.1.400-.1.600 0l1.500 1.200c.2.200.2.500 0 .700l-.9.900z"/></svg></a>
+          <a href="https://t.me/+375447143845" aria-label="Telegram" title="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.500 3.300 2.800 10.500c-1.300.5-1.300 1.200-.2 1.500l4.800 1.500 1.800 5.600c.2.600.1.800.7.800.5 0 .7-.2 1-.5l2.300-2.200 4.800 3.500c.9.500 1.500.2 1.700-.8l3.100-14.800c.3-1.300-.5-1.900-1.300-1.800zM9 13.800l9.300-5.900c.4-.3.800-.1.500.2l-7.700 7-.3 3.200L9 13.800z"/></svg></a>
+        </span>
+      </li>
+      <li><span class="label">Instagram</span><a href="https://www.instagram.com/alejandro.telegin/" target="_blank" rel="noopener">@alejandro.telegin</a></li>
+    </ul>
+  </div>
 </section>
 
 <footer><div class="wrap">
